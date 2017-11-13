@@ -19,12 +19,3 @@ def get_sale_items(category, retailer='aritzia'):
         url = re.split('"', re.split('href', item)[1])[1]
         sale_items[name] = url
     return sale_items
-
-
-sale = list(set(sale))
-
-old_sale = sale
-for i in sale:
-    if i not in old_sale:
-        print i
-
