@@ -14,8 +14,11 @@ def get_sale_items(category, retailer='aritzia'):
                     sale.append(row)
     sale_items = {}
     for item in sale:
-        print 'a'
-
+        name = re.split('"', re.split('title', item)[1])[1]
+        name = name.upper()
+        url = re.split('"', re.split('href', item)[1])[1]
+        sale_items[name] = url
+    return sale_items
 
 
 sale = list(set(sale))
