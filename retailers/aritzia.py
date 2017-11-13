@@ -13,9 +13,20 @@ for i in range(len(page_source)):
         for row in neighbor:
             if re.search('http://www.aritzia', row) is not None:
                 sale.append(row)
+
 sale = list(set(sale))
 
 old_sale = sale
 for i in sale:
     if i not in old_sale:
         print i
+
+
+import yaml
+
+with open("config.yaml", 'r') as stream:
+    try:
+        print(yaml.load(stream))
+    except yaml.YAMLError as exc:
+        print(exc)
+stream.close()

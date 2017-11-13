@@ -1,0 +1,30 @@
+# this file contains links crawled by the app
+
+clothing:
+  - category: sweater
+    links:
+      site1: sweater1
+      site2: sweater2
+  - category: hoodies
+    links:
+      site1: hoodie1
+      site2: hoodie2
+  - category: jackets
+    links:
+      site1: jacket1
+      site2: jacket2
+
+
+skincare:
+  - category: sweater
+    links:
+      site1: sweater1
+      site2: sweater2
+  - category: hoodies
+    links:
+      site1: hoodie1
+      site2: hoodie2
+  - category: jackets
+    links:
+      site1: jacket1
+      site2: jacket2
