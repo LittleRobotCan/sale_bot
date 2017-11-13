@@ -14,7 +14,8 @@ def get_sale_items(category, retailer='aritzia'):
                     sale.append(row)
     sale_items = {}
     for item in sale:
-        
+        print 'a'
+
 
 
 sale = list(set(sale))
