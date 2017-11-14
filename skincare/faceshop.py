@@ -1,9 +1,6 @@
 from tools import *
 
 def get_promotions(page, retailer='faceshop', merchandise='skincare'):
-    retailer = 'faceshop'
-    merchandise = 'skincare'
-    page = 'home'
     url = get_link(merchandise, retailer, page)
     print url
     page_source = get_page_source(url)
