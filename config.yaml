@@ -1,25 +1,10 @@
 # this file contains links crawled by the app
 
 clothing:
-  sweater:
-    aritzia: http://www.aritzia.com/en/clothing/sweaters?lastViewed=1000
-  hoodies:
-    aritzia: hoodie1
-    site2: hoodie2
-  jackets:
-    aritzia: jacket1
+  aritzia:
+    sweater: http://www.aritzia.com/en/clothing/sweaters?lastViewed=1000
 
 
 skincare:
-  - category: sweater
-    links:
-      site1: sweater1
-      site2: sweater2
-  - category: hoodies
-    links:
-      site1: hoodie1
-      site2: hoodie2
-  - category: jackets
-    links:
-      site1: jacket1
-      site2: jacket2
+  faceshop:
+      home: https://thefaceshop.ca/en/

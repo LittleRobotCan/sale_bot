@@ -1,8 +1,8 @@
 from tools import *
 
 
-def get_sale_items(category, retailer='aritzia'):
-    url = get_link(category, retailer)
+def get_sale_items(category, retailer='aritzia', merchandise='clothing'):
+    url = get_link(merchandise, retailer, category)
     page_source = get_page_source(url)
     sale = []
     for i in range(len(page_source)):

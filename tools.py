@@ -1,11 +1,11 @@
 import yaml, urllib2, re
 
 
-def get_link(category, retailer):
+def get_link(level0, level1, level2):
     with open("config.yaml", 'r') as stream:
         try:
             content = yaml.load(stream)
-            link = content['clothing'][category][retailer]
+            link = content[level0][level1][level2]
         except yaml.YAMLError as exc:
             print(exc)
     stream.close()
@@ -13,7 +13,7 @@ def get_link(category, retailer):
 
 
 def get_page_source(url):
-    response = urllib2.urlopen("http://www.aritzia.com/en/clothing/sweaters?lastViewed=1000")
+    response = urllib2.urlopen(url)
     page_source = response.read()
     page_source = re.split('\\\n', page_source)
     page_source = [line for line in page_source if len(line)>0]
