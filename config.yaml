@@ -8,3 +8,10 @@ clothing:
 skincare:
   faceshop:
       home: https://thefaceshop.ca/en/
+      find:
+        belif:
+          url:
+            https://thefaceshop.ca/en/collections/belif
+          products:
+            - Hungarian water essence
+            - Witch hazel herbal extract toner
