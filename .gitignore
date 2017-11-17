@@ -1,3 +1,7 @@
 *.pyc
 /analysis
 /data
+wishlist.yaml
+todo.txt
+*.xml
+*.iml
