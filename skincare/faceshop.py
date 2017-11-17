@@ -18,3 +18,6 @@ def get_promotions(page, retailer='faceshop', merchandise='skincare'):
                 promotion = re.sub('-', ' ', promotion.lower())
                 promotion_clean[promotion] = href
     return promotion_clean
+
+def check_price(keywords):
+    return None
