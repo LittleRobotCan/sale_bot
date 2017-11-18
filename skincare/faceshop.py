@@ -1,7 +1,7 @@
 from tools import *
 
 def get_promotions(page, retailer='faceshop', merchandise='skincare'):
-    url = get_link(merchandise, retailer, page)
+    url = read_config(merchandise, retailer, page)
     print url
     page_source = get_page_source(url)
     promotions = []
@@ -20,4 +20,6 @@ def get_promotions(page, retailer='faceshop', merchandise='skincare'):
     return promotion_clean
 
 def check_price(keywords):
+    url = read_config('skincare', 'faceshop', 'home')
+    search_results = access_page_search(url, keywords)
     return None
