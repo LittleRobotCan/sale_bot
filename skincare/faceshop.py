@@ -19,7 +19,10 @@ def get_promotions(page, retailer='faceshop', merchandise='skincare'):
                 promotion_clean[promotion] = href
     return promotion_clean
 
-def check_price(keywords):
+def get_tag_associated_url(keywords):
     url = read_config('skincare', 'faceshop', 'home')
     search_results = access_page_search(url, keywords)
+    for line in search_results:
+        if find_tag_in_source(line, ['hyperlink', 'title']):
+            return None
     return None
