@@ -1,7 +1,7 @@
-import yaml, urllib2, re
+import yaml, urllib2, re, requests
 
 
-def get_link(level0, level1, level2):
+def read_config(level0, level1, level2):
     with open("config.yaml", 'r') as stream:
         try:
             content = yaml.load(stream)
@@ -18,3 +18,22 @@ def get_page_source(url):
     page_source = re.split('\\\n', page_source)
     page_source = [line for line in page_source if len(line)>0]
     return page_source
+
+
+def access_page_search(url, keywords):
+    search_results = requests.get(url + keywords).text
+    results_parsed = re.split('\\\n', search_results)
+    results_parsed = [line for line in results_parsed if len(line)>0]
+    return results_parsed
+
+
+def find_tag_in_source(source_line, tag_type_list, AND=True):
+    html_tags = {"hyperlink": "a href","title":"title"}
+    tag_list = []
+    for tag_type in tag_type_list:
+        tag_list.append(html_tags[tag_type])
+    if AND:
+        tag_regex = '&'.join(tag_list)
+    else:
+        tag_regex = '|'.join(tag_list)
+    return re.search(tag_regex, source_line)
