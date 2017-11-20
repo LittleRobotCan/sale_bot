@@ -27,18 +27,3 @@ def access_page_search(url, keywords):
     return results_parsed
 
 
-def find_tag_in_source(source_line, tag_type_list, AND=True):
-    html_tags = {"hyperlink": "a href","title":"title"}
-    if AND:
-        for tag_type in tag_type_list:
-            tag_regex = r'\b'+html_tags[tag_type]+r'\b'
-            if re.search(tag_regex, source_line) is None:
-                return False
-        return True
-    else:
-        for tag_type in tag_type_list:
-            tag_regex = r'\b'+html_tags[tag_type]+r'\b'
-            if re.search(tag_regex, source_line) is not None:
-                return True
-            else:
-                return False
